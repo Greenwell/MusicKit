@@ -62,12 +62,12 @@ open class MIDI {
         }
         let s = MIDIReceived(_virtualSource, packetList)
         success = s == 0
-
-        packet.deinitialize()
+        
+        packet.deinitialize(count: 0)
         // this dealloc is superfluous; not sure why.
 //        packet.dealloc(sizeof(MIDIPacket))
-        packetList.deinitialize()
-        packetList.deallocate(capacity: MemoryLayout<MIDIPacketList>.size)
+        packetList.deinitialize(count: 0)
+        packetList.deallocate()        
         return success
     }
 
