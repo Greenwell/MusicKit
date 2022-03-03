@@ -5,7 +5,7 @@ import Foundation
 typealias ChromaNameTuple = (LetterName, Accidental)
 
 /// Pitch quality; also known as pitch class.
-public enum Chroma: UInt {
+public enum Chroma: UInt, Codable {
     /// C
     case c = 0
     /// C Sharp
